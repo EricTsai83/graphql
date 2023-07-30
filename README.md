@@ -4,4 +4,7 @@
 
 ### Install dependencies
 
-`npm install @apollo/client graphql`
+- `npm install @apollo/client graphql`
+- `npm add -D encoding`
+- `npm i @as-integrations/next`
+- `npm i @apollo/server`
