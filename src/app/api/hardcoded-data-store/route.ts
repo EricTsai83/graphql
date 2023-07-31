@@ -1,16 +1,20 @@
 import {ApolloServer} from "@apollo/server";
 import {startServerAndCreateNextHandler} from "@as-integrations/next";
 import {NextRequest} from "next/server";
+// Hardcoded data store "Kate Chopin"
 
-// Hardcoded data store
+interface Author {
+  [key: string]: {age: number; birthday: string};
+}
+
 const books = [
   {
     title: "The Awakening",
-    author: "Kate Chopin",
+    author: {name: "Eric", age: 12, birthday: "2000/01/01"},
   },
   {
     title: "City of Glass",
-    author: "Paul Auster",
+    author: {name: "Peko", age: 12, birthday: "2000/01/01"},
   },
 ];
 
@@ -18,7 +22,13 @@ const books = [
 const typeDefs = `#graphql
   type Book {
     title: String
-    author: String
+    author: Author
+  }
+
+  type Author {
+    name: String
+    age: Int
+    birthday: String
   }
 
   type Query {
