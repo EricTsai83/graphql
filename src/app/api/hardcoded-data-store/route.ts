@@ -3,10 +3,6 @@ import {startServerAndCreateNextHandler} from "@as-integrations/next";
 import {NextRequest} from "next/server";
 // Hardcoded data store "Kate Chopin"
 
-interface Author {
-  [key: string]: {age: number; birthday: string};
-}
-
 const books = [
   {
     title: "The Awakening",
